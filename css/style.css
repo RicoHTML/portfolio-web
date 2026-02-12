@@ -1,0 +1,191 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+background:#0b1220;
+color:white;
+overflow-x:hidden;
+}
+
+/* LOADER */
+
+#loader{
+position:fixed;
+inset:0;
+background:#050a16;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+#loader:after{
+content:"";
+width:40px;
+height:40px;
+border:4px solid #2aa8ff;
+border-top:4px solid transparent;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{to{rotate:360deg}}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+background:#050a16cc;
+backdrop-filter:blur(10px);
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #ffffff10;
+}
+
+header h1{
+font-size:22px;
+background:linear-gradient(90deg,#2aa8ff,#00ffe7);
+background-clip:text;
+color:transparent;
+}
+
+nav a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+}
+
+nav a:hover{color:#2aa8ff}
+
+/* HERO */
+
+.hero{
+min-height:80vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+linear-gradient(#0008,#0008),
+url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
+background-size:cover;
+text-align:center;
+}
+
+.hero h2{font-size:48px}
+
+/* SECTIONS */
+
+section{
+padding:80px 20px;
+max-width:1100px;
+margin:auto;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.show{opacity:1;transform:none}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:#ffffff08;
+border-radius:20px;
+overflow:hidden;
+border:1px solid #2aa8ff30;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px #2aa8ff70;
+}
+
+.card img{
+width:100%;
+height:160px;
+object-fit:cover;
+}
+
+.card p{
+padding:15px;
+text-align:center;
+}
+
+/* CONTACTO */
+
+.contacto{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+background:#050a16;
+border:1px solid #2aa8ff40;
+border-radius:10px;
+color:white;
+}
+
+button{
+margin-top:15px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:30px;
+background:linear-gradient(90deg,#2aa8ff,#005eff);
+color:white;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25d366;
+padding:14px;
+border-radius:50%;
+}
+
+/* PARTICLES */
+
+#particles{
+position:fixed;
+inset:0;
+z-index:-1;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+.hero h2{font-size:32px}
+.contacto{grid-template-columns:1fr}
+}
